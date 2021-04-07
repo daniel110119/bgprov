@@ -1,0 +1,45 @@
+{
+    "name": "bgprov/lugege",
+    "description": "电子渠道SDK",
+    "keywords": [
+        "bgprov",
+        "lugege-bgprov",
+        "bgprov-sdk"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lugege",
+            "email": "254419506@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "ext-fileinfo": "*",
+        "ext-openssl": "*",
+        "monolog/monolog": "^1.22 || ^2.0",
+        "guzzlehttp/guzzle": "^6.2 || ^7.0",
+        "pimple/pimple": "^3.0",
+        "symfony/cache": "^3.3 || ^4.3 || ^5.0",
+        "symfony/event-dispatcher": "^4.3 || ^5.0",
+        "symfony/http-foundation": "^2.7 || ^3.0 || ^4.0 || ^5.0",
+        "symfony/psr-http-message-bridge": "^0.3 || ^1.0 || ^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bgprov\\": "src/"
+        },
+        "files": [
+            "src/Kernel/Support/Helpers.php",
+            "src/Kernel/Helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bgprov\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}

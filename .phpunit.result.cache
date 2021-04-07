@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":274:{a:2:{s:7:"defects";a:2:{s:43:"Bgprov\Tests\Kernel\Support\DESTest::testLl";i:5;s:44:"Bgprov\Tests\Kernel\Support\DESTest::testAAA";i:5;}s:5:"times";a:2:{s:43:"Bgprov\Tests\Kernel\Support\DESTest::testLl";d:0.005;s:44:"Bgprov\Tests\Kernel\Support\DESTest::testAAA";d:0.009;}}}
