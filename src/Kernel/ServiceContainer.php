@@ -41,7 +41,7 @@ class ServiceContainer extends Container
                 'base_uri' => 'http://app.10085.shop/'
             ],
             'pem'=>[
-                'path'=> getRootPath().'\\PEM\\',
+                'path'=> 'PEM\\',
                 'file_name'=>'private.key'
             ],
             'user_id'=>1001,
