@@ -78,11 +78,11 @@ Sz3884WH9H4jqZYGRKmGWW7y2E6XVgzwvA+4XMsFJKOFPBtHDXRVRPe6WsM0oQvk
     }
 
 
-    private function generatePrivateKey(bool $force = false)
+    private function generatePrivateKey()
     {
         $config = $this->getConfig();
         $pem_config =$config->get('pem');
-        if ($force) {
+        if (is_dir($pem_config['path'].'\\'.$pem_config['file_name'])) {
             $response = $this->app['http_client']->request('POST','/',[
                 "query"=>[
                     "a"=>"GetRsa",

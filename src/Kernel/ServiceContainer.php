@@ -40,12 +40,12 @@ class ServiceContainer extends Container
                 'base_uri' => 'http://app.10085.shop/'
             ],
             'pem'=>[
-                'path'=> 'PEM\\',
+                'path'=> dirname(__FILE__),
                 'file_name'=>'private.key'
             ],
             'user_id'=>1001,
         ];
-        if (empty($this->userConfig)){
+        if (!empty($this->userConfig)){
             return array_replace_recursive($base, $this->userConfig);
         }else{
             return $base;
