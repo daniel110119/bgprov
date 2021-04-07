@@ -9,7 +9,6 @@ use Bgprov\Kernel\Providers\HttpClientServiceProvider;
 use Bgprov\Kernel\Providers\RequestServiceProvider;
 use Bgprov\OpenPlatform\Application;
 use Pimple\Container;
-use function PHPUnit\Framework\isEmpty;
 
 class ServiceContainer extends Container
 {
@@ -46,7 +45,7 @@ class ServiceContainer extends Container
             ],
             'user_id'=>1001,
         ];
-        if (isEmpty( $this->userConfig)){
+        if (empty($this->userConfig)){
             return array_replace_recursive($base, $this->userConfig);
         }else{
             return $base;
