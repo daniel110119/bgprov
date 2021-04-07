@@ -17,7 +17,7 @@ $defaultConfig =  [
 $app = Factory::make($config);
 //可以只传['user_id'=>1001] 不传
 $response = $app->sub_data->get(); 
- #check get_mobail get_pack
+ #check get_mobil get_pack
 #返回collect 数组
 
 ```
