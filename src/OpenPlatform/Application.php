@@ -28,25 +28,6 @@ class Application extends ServiceContainer
         SubData\ServiceProvider::class,
     ];
 
-    /**
-     * @param $method
-     * @param $arguments
-     * @return mixed
-     */
-    public function __call($method, $arguments)
-    {
-        return $this['get_mobil']->$method(...$arguments);
-    }
-
-    /**
-     * @param $name
-     * @return mixed
-     */
-    public function __get($name)
-    {
-        return $this[$name];
-    }
-
     public function hellp()
     {
         return [
@@ -82,4 +63,15 @@ class Application extends ServiceContainer
             ]
         ];
     }
+
+    /**
+     * @param $name
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        return $this[$name];
+    }
+
+
 }
