@@ -59,7 +59,7 @@ class Application extends ServiceContainer
                     ]
                 ],
                 "get_pack"=>[
-                    '参数示例'=>[]
+                    '获取套餐列表'=>[]
                 ],
                 "sub_data"=>[
                     '传入开卡信息'=>[
