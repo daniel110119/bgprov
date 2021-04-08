@@ -85,7 +85,11 @@ Sz3884WH9H4jqZYGRKmGWW7y2E6XVgzwvA+4XMsFJKOFPBtHDXRVRPe6WsM0oQvk
         $begin = "-----BEGIN PUBLIC KEY-----";
         $end = "-----END PUBLIC KEY-----";
         preg_match("/$begin(.*)$end/",$publicKey,$res);
-        $pubPem = chunk_split($res[1], 64, "\n");
+        if(empty($res) && isset($res[1])){
+            $pubPem = chunk_split($res[1], 64, "\n");
+        }else{
+            $pubPem = '';
+        }
        if(openssl_pkey_get_private("$begin\n$pubPem$end\n")){
            return "$begin\n$pubPem$end\n";
        }else{

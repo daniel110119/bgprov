@@ -28,7 +28,23 @@ class Application extends ServiceContainer
         SubData\ServiceProvider::class,
     ];
 
-    public function hellp()
+
+    /**
+     * @param $name
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        return $this[$name];
+    }
+
+
+    /**
+     * @param $method
+     * @param $arguments
+     * @return mixed
+     */
+    public function __call($method, $arguments)
     {
         return [
             'method'=>[
@@ -42,7 +58,7 @@ class Application extends ServiceContainer
                         "region"=>'区域代码同全省车牌首字母例如B代表绵阳的号码'
                     ]
                 ],
-                "获取套餐列表"=>[
+                "get_pack"=>[
                     '参数示例'=>[]
                 ],
                 "sub_data"=>[
@@ -63,15 +79,5 @@ class Application extends ServiceContainer
             ]
         ];
     }
-
-    /**
-     * @param $name
-     * @return mixed
-     */
-    public function __get($name)
-    {
-        return $this[$name];
-    }
-
 
 }

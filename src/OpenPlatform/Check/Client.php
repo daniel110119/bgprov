@@ -20,7 +20,7 @@ class Client extends BaseClient
      * @param array $data  address=该地址中文需要URLCODE编码之后才能正确解析
      * @return \Bgprov\Kernel\Support\Collection
      */
-    public function get(array $data)
+    public function get(array $data=[])
     {
         $data['userid'] = $this->getConfig()->get('user_id');
         $data['token'] = $this->generateToken();
@@ -28,7 +28,7 @@ class Client extends BaseClient
         return collect($response->toArray());
     }
 
-    public function raw (array $data)
+    public function raw (array $data=[])
     {
         $data['userid'] = $this->getConfig()->get('user_id');
         $data['token'] = $this->generateToken();

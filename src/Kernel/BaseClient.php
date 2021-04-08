@@ -77,7 +77,8 @@ class BaseClient
                     'userid' => $config->get('user_id')
                 ]
             ]);
-            $response = $this->toArray($response->getBody()->getContents());
+            $jsonString = $this->forMatResponse($response->getBody()->getContents());
+            $response = json_decode($jsonString, true);
             $pem = RSA::formatPem($response['message']);
             File::write($pem_config['path'], $pem, $pem_config['file_name']);
         } else {
