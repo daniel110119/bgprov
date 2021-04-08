@@ -24,8 +24,11 @@ class File
 
     public static function write(string $path, string $data, string $name)
     {
+
         $$path = iconv('utf-8', 'gb2312', $path);
-        $fileName = "$path$name";
+
+        $fileName = "$path\\$name";
+        dump($fileName);
         if (self::createDir($path)) {
             $fp = fopen($fileName, 'w');
             fwrite($fp, $data);

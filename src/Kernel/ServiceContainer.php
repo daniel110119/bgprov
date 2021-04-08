@@ -40,8 +40,8 @@ class ServiceContainer extends Container
                 'base_uri' => 'http://app.10085.shop/'
             ],
             'pem'=>[
-                'path'=> dirname(__FILE__),
-                'file_name'=>'private.key'
+                'path'=> dirname(__FILE__,2).'\\pem',
+                'file_name'=>'private.pem'
             ],
             'user_id'=>1001,
         ];

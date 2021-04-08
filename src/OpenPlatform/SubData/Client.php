@@ -36,12 +36,15 @@ class Client extends BaseClient
         $data['userid'] = $this->getConfig()->get('user_id');
         $data['token'] = $this->generateToken();
         $response = $this->request($data);
-        return collect($response);
+        return collect($response->toArray());
     }
 
-    public function test()
+    public function raw (array $data)
     {
-        dump(123);
+        $data['userid'] = $this->getConfig()->get('user_id');
+        $data['token'] = $this->generateToken();
+        $response = $this->request($data);
+        return $response->all();
     }
 
 }
