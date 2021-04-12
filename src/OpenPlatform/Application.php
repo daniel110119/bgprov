@@ -48,7 +48,7 @@ class Application extends ServiceContainer
     {
         return [
             'method'=>[
-                "check"=>[
+                "get_check"=>[
                     '传入客户地址校验是否是诈骗'=>[
                         "address"=>'该地址中文需要URLCODE编码之后才能正确解析'
                     ]
