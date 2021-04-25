@@ -44,7 +44,13 @@ class Client extends BaseClient
         $data['userid'] = $this->getConfig()->get('user_id');
         $data['token'] = $this->generateToken();
         $response = $this->request($data);
-        return $response->all();
+        $response = $response->all();
+        $original = $response->getBody()->getContents();
+        $res = [
+            'original'=>$original,
+            'data'=>json_decode($original,true)
+        ];
+        return $res;
     }
 
 }
